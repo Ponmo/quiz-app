@@ -16,10 +16,11 @@ app = Flask(__name__)
     
 @app.route('/')
 def renderMain():
-    return render_template('home.html')
+  return render_template('home.html')
 
 @app.route('/begin')
-    return render_template('page1.html')
+def renderPage1():
+  return render_template('page1.html')
 
 #def startOver():
 #    session.clear() #clears variable values and creates a new session
