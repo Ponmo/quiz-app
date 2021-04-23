@@ -2,6 +2,7 @@ import os
 from flask import Flask, url_for, render_template, request
 from flask import redirect
 from flask import session
+import Markup
 
 app = Flask(__name__)
 
@@ -20,29 +21,29 @@ def renderMain():
 
 @app.route('/page1')
 def renderPage1():
-  return render_template('page1.html')
+  return render_template('page1.html', disable = Markup(""), disable2 = Markup(""))
 
 #def startOver():
 #    session.clear() #clears variable values and creates a new session
 #    return redirect(url_for('renderMain')) # url_for('renderMain') could be replaced with '/'
 
-@app.route('/page1', methods=['GET','Post'])
+@app.route('/page2', methods=['GET','Post'])
 def renderPage2():
   session["answer"]=request.form['answer']
   return render_template('page2.html')
 
-@app.route('/page2', methods=['GET','POST'])
+@app.route('/page3', methods=['GET','POST'])
 def renderPage3():
 #    session["firstName"]=request.form['firstName']
 #    session["lastName"]=request.form['lastName']
   return render_template('page3.html')
 
-@app.route('/page3', methods=['GET','POST'])
+@app.route('/page4', methods=['GET','POST'])
 def renderPage3():
 #    session["favoriteColor"]=request.form['favoriteColor']
   return render_template('page4.html')
     
-@app.route('/page4', methods=['GET', 'POST'])
+@app.route('/page5', methods=['GET', 'POST'])
 def renderPage4():
   return render_template('page5.html')
 
