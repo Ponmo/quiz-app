@@ -39,12 +39,12 @@ def renderPage3():
   return render_template('page3.html')
 
 @app.route('/page4', methods=['GET','POST'])
-def renderPage3():
+def renderPage4():
 #    session["favoriteColor"]=request.form['favoriteColor']
   return render_template('page4.html')
     
 @app.route('/page5', methods=['GET', 'POST'])
-def renderPage4():
+def renderPage5():
   return render_template('page5.html')
 
 if __name__=="__main__":
