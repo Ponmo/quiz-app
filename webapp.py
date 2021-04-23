@@ -26,9 +26,9 @@ def renderPage1():
 #    session.clear() #clears variable values and creates a new session
 #    return redirect(url_for('renderMain')) # url_for('renderMain') could be replaced with '/'
 
-#@app.route('/page1')
-#def renderPage1():
-#    return render_template('page1.html')
+@app.route('/page1')
+def renderPage2():
+  return render_template('page2.html')
 
 #@app.route('/page2',methods=['GET','POST'])
 #def renderPage2():
