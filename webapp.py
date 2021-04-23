@@ -42,7 +42,7 @@ def renderPage3():
   return render_template('page4.html')
     
 @app.route('/page4', methods=['GET', 'POST'])
-def renderPage4()
+def renderPage4():
   return render_template('page5.html')
 
 if __name__=="__main__":
