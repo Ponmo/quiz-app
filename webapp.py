@@ -5,14 +5,7 @@ from flask import session
 
 app = Flask(__name__)
 
-
-# In order to use "sessions",you need a "secret key".
-# This is something random you generate.  
-# For more info see: http://flask.pocoo.org/docs/0.10/quickstart/#sessions
-
-#app.secret_key=os.environ["SECRET_KEY"]; #This is an environment variable.  
-                                     #The value should be set in Heroku (Settings->Config Vars).  
-                                     #To run locally, set in env.sh and include that file in gitignore so the secret key is not made public.
+app.secret_key=os.environ["KEY"];
     
 @app.route('/')
 def renderMain():
