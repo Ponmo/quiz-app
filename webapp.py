@@ -19,7 +19,7 @@ def renderPage1():
     if session['answer']=='True':
       disableA = Markup('selected="selected" disabled')
       disable2A = Markup('disabled')
-    elif session['anwer']=='False':
+    elif session['answer']=='False':
       disableA = Markup('disabled')
       disable2A = Markup('selected="selected" disabled')
   return render_template('page1.html', disable = Markup(''), disable2 = Markup(''))
