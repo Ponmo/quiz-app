@@ -17,11 +17,11 @@ def renderPage1():
   disable2A = Markup('')
   if 'answer' in session:
     if session['answer']=='True':
-      disableA = Markup('selected="selected" disabled')
+      disableA = Markup('selected disabled')
       disable2A = Markup('disabled')
     elif session['answer']=='False':
       disableA = Markup('disabled')
-      disable2A = Markup('selected="selected" disabled')
+      disable2A = Markup('selected disabled')
   return render_template('page1.html', disable = disableA, disable2 = disable2A)
 
 @app.route('/page2', methods=['GET','Post'])
