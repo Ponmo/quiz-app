@@ -34,9 +34,9 @@ def renderPage4():
     session["answer3"]=request.form['answer']
   return render_template('page4.html')
     
-#@app.route('/page5', methods=['GET', 'POST'])
-#def renderPage5():
-#  return render_template('page5.html')
+@app.route('/page5', methods=['GET', 'POST'])
+def renderPage5():
+  return render_template('page5.html')
 
 if __name__=="__main__":
     app.run(debug=True)
