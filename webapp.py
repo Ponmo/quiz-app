@@ -15,10 +15,6 @@ def renderMain():
 def renderPage1():
   return render_template('page1.html', disable = Markup(''), disable2 = Markup(''))
 
-#def startOver():
-#    session.clear() #clears variable values and creates a new session
-#    return redirect(url_for('renderMain')) # url_for('renderMain') could be replaced with '/'
-
 @app.route('/page2', methods=['GET','Post'])
 def renderPage2():
   session["answer"]=request.form['answer']
@@ -38,6 +34,11 @@ def renderPage4():
 def renderPage5():
   session["answer4"]=request.form['answer']
   return render_template('page5.html')
+
+@app.route('/reset')
+def startOver():
+  session.clear()
+  return redirect(url_for('renderMain'))
 
 if __name__=="__main__":
     app.run(debug=True)
