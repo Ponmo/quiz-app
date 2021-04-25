@@ -26,7 +26,8 @@ def renderPage1():
 
 @app.route('/page2', methods=['GET','POST'])
 def renderPage2():
-  session["answer"]=request.form['answer']
+  if 'answer' not in session:
+    session["answer"]=request.form['answer']
   return render_template('page2.html')
 
 @app.route('/page3', methods=['GET','POST'])
