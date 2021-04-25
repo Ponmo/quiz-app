@@ -22,7 +22,7 @@ def renderPage1():
     elif session['answer']=='False':
       disableA = Markup('disabled')
       disable2A = Markup('selected="selected" disabled')
-  return render_template('page1.html', disable = Markup(''), disable2 = Markup(''))
+  return render_template('page1.html', disable = disableA, disable2 = disable2A)
 
 @app.route('/page2', methods=['GET','Post'])
 def renderPage2():
