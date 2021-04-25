@@ -28,7 +28,7 @@ def renderPage1():
 def renderPage2():
   if 'answer' not in session:
     session["answer"]=request.form['answer']
-  return render_template('page2.html')
+  return render_template('page2.html', disable3 = Markup(''), disable4 = Markup(''))
 
 @app.route('/page3', methods=['GET','POST'])
 def renderPage3():
