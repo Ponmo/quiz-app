@@ -1,7 +1,21 @@
 {% extends "layout.html" %}
 
-{% block title %}Q3{% endblock %}
+{% block title %}Q1{% endblock %}
 
 {% block content %}
-<h1>Question 3:</h1>
+<div class="box">
+  <div class="number">
+    <h1>3/4</h1>
+  </div>
+  <div class="question">
+    <h1>Carbon fixation means transforming carbon into a more useful form.</h1>
+  </div>
+  <form action={{ url_for("renderPage2") }} method="POST">
+    <input type="radio" id="True" name="answer" value="True" required {{ disable5 }}>
+    <label for="True">True</label><br>
+    <input type="radio" id="False" name="answer" value="False" {{ disable6 }}>
+    <label for="False">False</label><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
 {% endblock %}
