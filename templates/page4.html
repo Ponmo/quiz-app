@@ -1,5 +1,21 @@
 {% extends "layout.html" %}
+
 {% block title %}Q4{% endblock %}
+
 {% block content %}
-<h1>Question 4:</h1>
+<div class="box">
+  <div class="number">
+    <h1>4/4</h1>
+  </div>
+  <div class="question">
+    <h1>If an area has high water potential, it means the water there will move to an area with less solute density.</h1>
+  </div>
+  <form action={{ url_for("renderPage2") }} method="POST">
+    <input type="radio" id="True" name="answer" value="True" required {{ disable }}>
+    <label for="True">True</label><br>
+    <input type="radio" id="False" name="answer" value="False" {{ disable2 }}>
+    <label for="False">False</label><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
 {% endblock %}
