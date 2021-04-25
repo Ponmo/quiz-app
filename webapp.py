@@ -26,17 +26,17 @@ def renderPage2():
 
 @app.route('/page3', methods=['GET','POST'])
 def renderPage3():
-    session["answer2"]=request.form['answer']
+  session["answer2"]=request.form['answer']
   return render_template('page3.html')
 
 @app.route('/page4', methods=['GET','POST'])
 def renderPage4():
-    session["answer3"]=request.form['answer']
+  session["answer3"]=request.form['answer']
   return render_template('page4.html')
-    
+
 @app.route('/page5', methods=['GET', 'POST'])
 def renderPage5():
-    session["answer4"]=request.form['answer']
+  session["answer4"]=request.form['answer']
   return render_template('page5.html')
 
 if __name__=="__main__":
