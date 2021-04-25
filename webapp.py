@@ -24,7 +24,7 @@ def renderPage1():
       disable2A = Markup('checked disabled')
   return render_template('page1.html', disable = disableA, disable2 = disable2A)
 
-@app.route('/page2', methods=['GET','Post'])
+@app.route('/page2', methods=['GET','POST'])
 def renderPage2():
   session["answer"]=request.form['answer']
   return render_template('page2.html')
