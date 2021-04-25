@@ -24,11 +24,10 @@ def renderPage2():
   session["answer"]=request.form['answer']
   return render_template('page2.html')
 
-#@app.route('/page3', methods=['GET','POST'])
-#def renderPage3():
-#    session["firstName"]=request.form['firstName']
-#    session["lastName"]=request.form['lastName']
-#  return render_template('page3.html')
+@app.route('/page3', methods=['GET','POST'])
+def renderPage3():
+    session["answer2"]=request.form['answer']
+  return render_template('page3.html')
 
 #@app.route('/page4', methods=['GET','POST'])
 #def renderPage4():
