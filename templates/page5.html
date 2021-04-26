@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 
-{% block title %}No{% endblock %}
+{% block title %}Results{% endblock %}
 
 {% block content %}
-<h1>Biology Test Results</h1><div>
-<p></p>
+<h1>Biology Test Results</h1><br>
+{{ results }}
 <form action="/reset">
   <input type="submit" value="Retake Quiz">
 </form>
