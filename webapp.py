@@ -16,13 +16,8 @@ def renderPage1():
   disableA = Markup('')
   disable2A = Markup('')
   if 'answer1' in session:
-    if session['answer1']=='True':
-      disableA = Markup('checked disabled')
-      disable2A = Markup('disabled')
-    elif session['answer1']=='False':
-      disableA = Markup('disabled')
-      disable2A = Markup('checked disabled')
-  return render_template('page1.html', disable = disableA, disable2 = disable2A)
+    settings = checkAnswer('answer1')
+  return render_template('page1.html', disable = settings[0], disable2 = settings[1])
 
 @app.route('/page2', methods=['GET','POST'])
 def renderPage2():
