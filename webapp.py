@@ -22,21 +22,33 @@ def renderPage1():
 def renderPage2():
   if 'answer1' not in session:
     session["answer1"]=request.form['answer']
-  return render_template('page2.html', disable3 = Markup(''), disable4 = Markup(''))
+  settings = ['', '']
+  else:
+    settings = checkAnswer('answer2')
+  return render_template('page2.html', disable3 = settings[0], disable4 = settings[1])
 
 @app.route('/page3', methods=['GET','POST'])
 def renderPage3():
-  session["answer2"]=request.form['answer']
-  return render_template('page3.html')
+  if 'answer2' not in session:
+    session["answer2"]=request.form['answer']
+  settings = ['', '']
+  else:
+    settings = checkAnswer('answer3')
+  return render_template('page3.html', disable5 = settings[0], disable6 = settings[1])
 
 @app.route('/page4', methods=['GET','POST'])
 def renderPage4():
-  session["answer3"]=request.form['answer']
-  return render_template('page4.html')
+  if 'answer3' not in session:
+    session["answer3"]=request.form['answer']
+  settings = ['', '']
+  else:
+    settings = checkAnswer('answer4')
+  return render_template('page4.html', disable7 = settings[0], disable8 = settings[1])
 
 @app.route('/page5', methods=['GET', 'POST'])
 def renderPage5():
-  session["answer4"]=request.form['answer']
+  if 'answer4' not in session:
+    session["answer4"]=request.form['answer']
   return render_template('page5.html')
 
 @app.route('/reset')
