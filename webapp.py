@@ -15,19 +15,19 @@ def renderMain():
 def renderPage1():
   disableA = Markup('')
   disable2A = Markup('')
-  if 'answer' in session:
-    if session['answer']=='True':
+  if 'answer1' in session:
+    if session['answer1']=='True':
       disableA = Markup('checked disabled')
       disable2A = Markup('disabled')
-    elif session['answer']=='False':
+    elif session['answer1']=='False':
       disableA = Markup('disabled')
       disable2A = Markup('checked disabled')
   return render_template('page1.html', disable = disableA, disable2 = disable2A)
 
 @app.route('/page2', methods=['GET','POST'])
 def renderPage2():
-  if 'answer' not in session:
-    session["answer"]=request.form['answer']
+  if 'answer1' not in session:
+    session["answer1"]=request.form['answer1']
   return render_template('page2.html', disable3 = Markup(''), disable4 = Markup(''))
 
 @app.route('/page3', methods=['GET','POST'])
@@ -50,5 +50,15 @@ def startOver():
   session.clear()
   return redirect(url_for('renderMain'))
 
+def checkAnswer(question_number):
+    settings = []
+    if session[question_number]=='True':
+        settings.append(Markup('checked disabled'))
+        settings.append(Markup('disabled'))
+    else:
+        settings.append(Markup('disabled'))
+        settings.append(Markup('checked disabled'))
+    return settings
+    
 if __name__=="__main__":
     app.run(debug=True)
