@@ -13,6 +13,7 @@ def renderMain():
 
 @app.route('/page1')
 def renderPage1():
+  settings = ['', '']
   if 'answer1' in session:
     settings = checkAnswer('answer1')
   return render_template('page1.html', disable = settings[0], disable2 = settings[1])
