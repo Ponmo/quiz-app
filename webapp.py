@@ -10,7 +10,8 @@ app.secret_key=os.environ["KEY"];
     
 @app.route('/')
 def renderMain():
-  session["start"]=time.time()
+  if 'start' not in session:
+    session["start"]=time.time()
   return render_template('home.html')
 
 @app.route('/page1')
