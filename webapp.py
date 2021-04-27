@@ -53,7 +53,8 @@ def renderPage5():
   second = session['answer2']
   third = session['answer3']
   fourth = session['answer4']
-  return render_template('page5.html', answerone = first, answertwo = second, answerthree = third, answerfour = fourth)
+  number_correct = checkCorrect()
+  return render_template('page5.html', answerone = first, answertwo = second, answerthree = third, answerfour = fourth, correct = number_correct)
 
 @app.route('/reset')
 def startOver():
@@ -69,6 +70,18 @@ def checkAnswer(question_number):
         settings.append(Markup('disabled'))
         settings.append(Markup('checked disabled'))
     return settings
+
+def checkCorrect():
+    score = 0
+    if session['answer1'] == true:
+        score += 1
+    session['answer2'] == false:
+        score += 1
+    session['answer3'] == true:
+        score += 1
+    session['answer4'] == false:
+        score += 1
+    return score
     
 if __name__=="__main__":
     app.run(debug=True)
