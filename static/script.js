@@ -1,4 +1,3 @@
-$(document).ready(function() {
   window.addEventListener( "pageshow", function ( event ) {
   var historyTraversal = event.persisted || 
                          ( typeof window.performance != "undefined" && 
@@ -8,4 +7,3 @@ $(document).ready(function() {
     window.location.reload();
   }
   });
-});
