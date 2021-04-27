@@ -73,13 +73,13 @@ def checkAnswer(question_number):
 
 def checkCorrect():
     score = 0
-    if session['answer1'] == true:
+    if session['answer1'] == "True":
         score += 1
-    session['answer2'] == false:
+    session['answer2'] == "False":
         score += 1
-    session['answer3'] == true:
+    session['answer3'] == "True":
         score += 1
-    session['answer4'] == false:
+    session['answer4'] == "False":
         score += 1
     return score
     
