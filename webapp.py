@@ -54,7 +54,7 @@ def renderPage5():
   third = session['answer3']
   fourth = session['answer4']
   number_correct = checkCorrect()
-  return render_template('page5.html', answerone = first, answertwo = second, answerthree = third, answerfour = fourth, correct = number_correct)
+  return render_template('page5.html', answerone = first, answertwo = second, answerthree = third, answerfour = fourth, score = number_correct)
 
 @app.route('/reset')
 def startOver():
