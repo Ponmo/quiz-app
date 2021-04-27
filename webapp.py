@@ -75,11 +75,11 @@ def checkCorrect():
     score = 0
     if session['answer1'] == "True":
         score += 1
-    session['answer2'] == "False":
+    if session['answer2'] == "False":
         score += 1
-    session['answer3'] == "True":
+    if session['answer3'] == "True":
         score += 1
-    session['answer4'] == "False":
+    if session['answer4'] == "False":
         score += 1
     return score
     
