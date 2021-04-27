@@ -10,13 +10,13 @@ app.secret_key=os.environ["KEY"];
     
 @app.route('/')
 def renderMain():
-  if 'start' not in session:
-    session["start"]=time.time()
   return render_template('home.html')
 
 @app.route('/page1')
 def renderPage1():
   settings = ['', '']
+  if 'start' not in session:
+    session["start"]=time.time()
   if 'answer1' in session:
     settings = checkAnswer('answer1')
   return render_template('page1.html', disable = settings[0], disable2 = settings[1])
