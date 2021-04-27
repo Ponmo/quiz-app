@@ -56,14 +56,9 @@ def renderPage5():
   second = session['answer2']
   third = session['answer3']
   fourth = session['answer4']
-  fifth = (time.time() - session['start'])
+  fifth = int(time.time() - session['start'])
   number_correct = checkCorrect()
   return render_template('page5.html', answerone = first, answertwo = second, answerthree = third, answerfour = fourth, totaltime = fifth,score = number_correct)
-
-start = time.time()
-print("hello")
-end = time.time()
-print(end - start)
 
 @app.route('/reset')
 def startOver():
