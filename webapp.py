@@ -2,6 +2,7 @@ import os
 from flask import Flask, request, Markup, url_for, render_template, flash, Markup
 from flask import redirect
 from flask import session
+import time
 
 app = Flask(__name__)
 
@@ -9,6 +10,7 @@ app.secret_key=os.environ["KEY"];
     
 @app.route('/')
 def renderMain():
+  session["start"]=time.time()
   return render_template('home.html')
 
 @app.route('/page1')
@@ -53,8 +55,14 @@ def renderPage5():
   second = session['answer2']
   third = session['answer3']
   fourth = session['answer4']
+  fifth = (time.time() - session['start'])
   number_correct = checkCorrect()
-  return render_template('page5.html', answerone = first, answertwo = second, answerthree = third, answerfour = fourth, score = number_correct)
+  return render_template('page5.html', answerone = first, answertwo = second, answerthree = third, answerfour = fourth, totaltime = fifth,score = number_correct)
+
+start = time.time()
+print("hello")
+end = time.time()
+print(end - start)
 
 @app.route('/reset')
 def startOver():
