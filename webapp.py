@@ -49,10 +49,10 @@ def renderPage4():
 def renderPage5():
   if 'answer4' not in session:
     session["answer4"]=request.form['answer']
-  result = Markup('<h2>Polymers are formed by dehydation synthesis reactions.</h2><br>' + '<p>Your answer: </p>' + session["answer1"] + '<br>' + '<p>Correct answer: True</p><br>' +
-                 '<h2>Enzymes are used to make substrates.</h2><br>' + '<p>Your answer: </p>' + session["answer2"] + '<br>' + '<p>Correct answer: False</p><br>' +
-                 '<h2>Carbon fixation means transforming carbon into a more useful form.</h2><br>' + '<p>Your answer: </p>' + session["answer3"] + '<br>' + '<p>Correct answer: True</p><br>' +
-                 '<h2>If an area has high water potential, it means the water there will move to an area with less solute density.</h2><br>' + '<p>Your answer: </p>' + session["answer4"] + '<br>' + '<p>Correct answer: False</p><br>')
+  result = Markup('<h2>Polymers are formed by dehydation synthesis reactions.</h2>' + '<p>Your answer: </p>' + session["answer1"] + '<p>Correct answer: True</p>' +
+                 '<h2>Enzymes are used to make substrates.</h2>' + '<p>Your answer: </p>' + session["answer2"] + '<p>Correct answer: False</p>' +
+                 '<h2>Carbon fixation means transforming carbon into a more useful form.</h2>' + '<p>Your answer: </p>' + session["answer3"] + '<p>Correct answer: True</p>' +
+                 '<h2>If an area has high water potential, it means the water there will move to an area with less solute density.</h2>' + '<p>Your answer: </p>' + session["answer4"] + '<p>Correct answer: False</p>')
   return render_template('page5.html', results = result)
 
 @app.route('/reset')
