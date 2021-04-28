@@ -4,7 +4,7 @@ $(document).ready(function() {
                          ( typeof window.performance != "undefined" && 
                               window.performance.navigation.type === 2 );
     if ( historyTraversal ) {
-      window.location.reload();
+      window.location.href=window.location.href
     }
   });
 });
