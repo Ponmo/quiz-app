@@ -1,4 +1,3 @@
-jQuery( document ).ready(function( $ ) {
    window.addEventListener( "pageshow", function ( event ) 
       { 
       var historyTraversal = event.persisted || 
@@ -7,4 +6,3 @@ jQuery( document ).ready(function( $ ) {
          { window.location.reload( true ) 
       } 
    });
-});
