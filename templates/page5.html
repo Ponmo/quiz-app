@@ -3,20 +3,20 @@
 {% block title %}Results{% endblock %}
 
 {% block content %}
-<h1>Biology Test Results: {{ score }}/4</h1><br>
-<h2>Polymers are formed by dehydation synthesis reactions.</h2>
+<h1 class="results">Biology Test Results: {{ score }}/4</h1>
+<p>Total time taken: <b>{{ totaltime }}s</b></p>
+<h2>1. Polymers are formed by dehydation synthesis reactions.</h2>
 <p>Your answer: {{ answerone }}</p>
 <p>Correct answer: True</p>
-<h2>Enzymes are used to make substrates.</h2>
+<h2>2. Enzymes are used to make substrates.</h2>
 <p>Your answer: {{ answertwo }}</p>
 <p>Correct answer: False</p>
-<h2>Carbon fixation means transforming carbon into a more useful form.</h2>
+<h2>3. Carbon fixation means transforming carbon into a more useful form.</h2>
 <p>Your answer: {{ answerthree }}</p>
 <p>Correct answer: True</p>
-<h2>If an area has high water potential, it means the water there will move to an area with less solute density.</h2>
+<h2>4. If an area has high water potential, it means the water there will move to an area with less solute density.</h2>
 <p>Your answer: {{ answerfour }}</p>
 <p>Correct answer: False</p>
-<p>Total time taken: {{ totaltime }}s</p>
 <form action="/reset">
   <input type="submit" value="Retake Quiz">
 </form>
