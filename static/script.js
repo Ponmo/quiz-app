@@ -1,7 +1,10 @@
 jQuery( document ).ready(function( $ ) {
-   var perfEntries = performance.getEntriesByType("navigation");
-
-if (perfEntries[0].type === "back_forward") {
-    location.reload(true);
-}
+   window.addEventListener( "pageshow", function ( event ) 
+      { 
+      var historyTraversal = event.persisted || 
+          ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 ); 
+      if ( historyTraversal ) 
+         { window.location.reload( true ) 
+      } 
+   });
 });
