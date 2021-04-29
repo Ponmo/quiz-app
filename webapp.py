@@ -14,7 +14,7 @@ def renderMain():
 
 @app.route('/page1')
 def renderPage1():
-  settings = ['disabled', 'disabled']
+  settings = ['', '']
   if 'start' not in session:
     session["start"]=time.time()
   if 'answer1' in session:
@@ -23,7 +23,7 @@ def renderPage1():
 
 @app.route('/page2', methods=['GET','POST'])
 def renderPage2():
-  settings = ['disabled', 'disabled']
+  settings = ['', '']
   if 'answer2' in session:
     settings = checkAnswer('answer2')
   elif 'answer1' not in session:
@@ -32,7 +32,7 @@ def renderPage2():
 
 @app.route('/page3', methods=['GET','POST'])
 def renderPage3():
-  settings = ['disabled', 'disabled']
+  settings = ['', '']
   if 'answer3' in session:
     settings = checkAnswer('answer3')
   elif 'answer2' not in session:
@@ -41,7 +41,7 @@ def renderPage3():
 
 @app.route('/page4', methods=['GET','POST'])
 def renderPage4():
-  settings = ['disabled', 'disabled']
+  settings = ['', '']
   if 'answer4' in session:
     settings = checkAnswer('answer4')
   elif 'answer3' not in session:
