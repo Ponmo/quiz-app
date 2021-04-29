@@ -1,5 +1,7 @@
 jQuery( document ).ready(function( $ ) {
-   $(window).on('popstate', function() {
-      location.reload(true);
-   });
+   var perfEntries = performance.getEntriesByType("navigation");
+
+if (perfEntries[0].type === "back_forward") {
+    location.reload(true);
+}
 });
